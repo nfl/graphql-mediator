@@ -1,0 +1,71 @@
+query IntrospectionQuery {
+    __schema {
+      types {
+        name
+        kind
+        description
+        ...FullType
+      }
+    }
+  }
+
+  fragment FullType on __Type {
+    fields(includeDeprecated: false) {
+      name
+      description
+      type {
+        ...TypeRef
+      }
+    }
+    interfaces {
+      ...TypeRef
+    }
+    enumValues(includeDeprecated: false) {
+      name
+      description
+    }
+    possibleTypes {
+      ...TypeRef
+    }
+  }
+
+  fragment TypeRef on __Type {
+    kind
+    name
+    description
+    ofType {
+      kind
+      name
+      description
+      ofType {
+        kind
+        name
+        description
+        ofType {
+          kind
+          name
+          description
+          ofType {
+            kind
+            name
+            description
+            ofType {
+              kind
+              name
+              description
+              ofType {
+                kind
+                name
+                description
+                ofType {
+                  kind
+                  name
+                  description
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

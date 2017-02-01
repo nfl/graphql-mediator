@@ -4,7 +4,10 @@
 
 [![Build Status](https://travis-ci.org/nfl/graphql-mediator.svg?branch=master)](https://travis-ci.org/nfl/graphql-mediator) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.nfl.xxyyzz/xxyyzz/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.nfl.xxyyzz/xxyyzz) [ ![Download](https://api.bintray.com/packages/nfl/maven/xxyyzz/images/download.svg) ](https://bintray.com/nfl/maven/xxyyzz/_latestVersion) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/nfl/xxyyzz/blob/master/LICENSE)
 
-A library that lets you use Plain Old Java Objects to describe your GraphQL schema.
+A library that lets co-opt objects from other GraphQL services.
+
+This library converts the result of a GraphQL introspection query into graph-ql usable objects for inclusion into
+other GraphQL exported objects.
 
 ## Binaries
 
