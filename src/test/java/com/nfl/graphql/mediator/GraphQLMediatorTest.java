@@ -1,6 +1,6 @@
 package com.nfl.graphql.mediator;
 
-import graphql.schema.GraphQLObjectType;
+import graphql.schema.GraphQLOutputType;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
@@ -19,7 +19,7 @@ public class GraphQLMediatorTest extends BaseBeanTest {
         GraphQLMediator graphQLMediator = new GraphQLMediator(schemaJson);
         assertNotNull(graphQLMediator);
 
-        GraphQLObjectType imageObject = graphQLMediator.retrieveOutputDescription("Image");
+        GraphQLOutputType imageObject = graphQLMediator.retrieveOutputDescription("Image");
         assertNotNull(imageObject);
     }
 
