@@ -15,6 +15,7 @@ public class GraphQLMediatorTest extends BaseBeanTest {
 
     public void tryMe() {
         assertFalse(schemaJson.isEmpty());
+        assertTrue(schemaJson.length() > 100);
     }
 
 }
