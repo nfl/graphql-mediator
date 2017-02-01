@@ -1,5 +1,6 @@
 package com.nfl.graphql.mediator;
 
+import graphql.schema.GraphQLObjectType;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
@@ -13,9 +14,13 @@ public class GraphQLMediatorTest extends BaseBeanTest {
         schemaJson = loadFromFile("schema.json");
     }
 
-    public void tryMe() {
+    public void imageConfirm() {
         assertFalse(schemaJson.isEmpty());
-        assertTrue(schemaJson.length() > 100);
+        GraphQLMediator graphQLMediator = new GraphQLMediator(schemaJson);
+        assertNotNull(graphQLMediator);
+
+        GraphQLObjectType imageObject = graphQLMediator.retrieveOutputDescription("Image");
+        assertNotNull(imageObject);
     }
 
 }

@@ -12,6 +12,7 @@ dependencies {
     compile 'commons-io:commons-io:2.5'
     compile 'com.graphql-java:graphql-java:2.3.0'
     compile 'org.springframework:spring-core:4.3.4.RELEASE'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
 
     testCompile group: 'org.testng', name: 'testng', version: '6.+'
 }
