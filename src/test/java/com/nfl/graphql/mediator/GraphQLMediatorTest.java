@@ -24,4 +24,13 @@ public class GraphQLMediatorTest extends BaseBeanTest {
         assertEquals(imageObject.getName(), "Image");
     }
 
+    public void playerConfirm() {
+        assertFalse(schemaJson.isEmpty());
+        GraphQLMediator graphQLMediator = new GraphQLMediator(schemaJson);
+        assertNotNull(graphQLMediator);
+
+        GraphQLOutputType imageObject = graphQLMediator.retrieveOutputDescription("Player");
+        assertNotNull(imageObject);
+        assertEquals(imageObject.getName(), "Player");
+    }
 }
