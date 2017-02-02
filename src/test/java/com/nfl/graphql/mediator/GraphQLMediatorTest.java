@@ -21,6 +21,7 @@ public class GraphQLMediatorTest extends BaseBeanTest {
 
         GraphQLOutputType imageObject = graphQLMediator.retrieveOutputDescription("Image");
         assertNotNull(imageObject);
+        assertEquals(imageObject.getName(), "Image");
     }
 
 }
