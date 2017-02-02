@@ -53,8 +53,6 @@ public class GraphQLMediator {
      */
     private GraphQLOutputType retrieveOutputDescription(String typeName, Set<String> undefinedTypes) {
 
-        System.out.println("Type: " + typeName + " depth: " + depth + " undef size: " + undefinedTypes.size());
-
         if (!builtObjects.containsKey(typeName) && !undefinedTypes.contains(typeName)) {
             Set<String> moreUndefined = new HashSet<>(undefinedTypes);
             moreUndefined.add(typeName);
@@ -115,8 +113,6 @@ public class GraphQLMediator {
             }
         };
     }
-
-    private int depth;
 
     private GraphQLOutputType deriveType(JsonNode type, Set<String> undefinedTypes) {
 
