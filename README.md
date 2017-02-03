@@ -2,7 +2,7 @@
 
 # graphql-mediator
 
-[![Build Status](https://travis-ci.org/nfl/graphql-mediator.svg?branch=master)](https://travis-ci.org/nfl/graphql-mediator) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.nfl.xxyyzz/xxyyzz/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.nfl.xxyyzz/xxyyzz) [ ![Download](https://api.bintray.com/packages/nfl/maven/xxyyzz/images/download.svg) ](https://bintray.com/nfl/maven/xxyyzz/_latestVersion) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/nfl/xxyyzz/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/nfl/graphql-mediator.svg?branch=master)](https://travis-ci.org/nfl/graphql-mediator) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.nfl.graphql/mediator/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.nfl.graphql/mediator) [ ![Download](https://api.bintray.com/packages/nfl/maven/xxyyzz/images/download.svg) ](https://bintray.com/nfl/maven/xxyyzz/_latestVersion) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/nfl/graphql-mediator/blob/master/LICENSE)
 
 A library that lets co-opt objects from other GraphQL services.
 
@@ -15,16 +15,16 @@ Example for Maven:
 
 ```xml
 <dependency>
-    <groupId>com.nfl.xxyyzz</groupId>
-    <artifactId>xxyyzz</artifactId>
-    <version>x.y.z</version>
+    <groupId>com.nfl.graphql</groupId>
+    <artifactId>mediator</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 
 Example for gradle:
 
 ```gradle
-compile("com.nfl.xxyyzz:xxyyzz:x.y.z")
+compile("om.nfl.graphql:mediator:1.0.0")
 ```
 
 Change history can be found here: [CHANGELOG.md](https://github.com/nfl/graphql-mediator/blob/master/CHANGELOG.md)
