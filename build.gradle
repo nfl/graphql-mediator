@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 repositories {
     mavenLocal()
@@ -18,4 +19,70 @@ dependencies {
 test {
     useTestNG()
     include "**/*Test.class"
+}
+
+publishing {
+    publications {
+        projectPublish(MavenPublication) {
+            from components.java
+            groupId 'com.nfl.graphql'
+            artifactId 'mediator'
+            version PROJECT_VERSION
+
+            artifact sourcesJar {
+                classifier "sources"
+            }
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+
+            pom.withXml {
+                asNode().children().last() + {
+                    resolveStrategy = Closure.DELEGATE_FIRST
+                    name project.name
+                    description project.description
+                    url PROJECT_GITHUB_REPO_URL
+                    scm {
+                        url PROJECT_GITHUB_REPO_URL
+                        connection PROJECT_GITHUB_REPO_URL
+                        developerConnection PROJECT_GITHUB_REPO_URL
+                    }
+                    licenses {
+                        license {
+                            name 'MIT'
+                            url PROJECT_LICENSE_URL
+                            distribution 'repo'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    dependsOn classes
+    classifier 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+jar {
+    from "LICENSE"
+    manifest {
+        attributes(
+                "Specification-Title": 'grahpql-mediator',
+                "Specification-Version": PROJECT_VERSION,
+                "Implementation-Version": PROJECT_VERSION,
+        )
+    }
 }
