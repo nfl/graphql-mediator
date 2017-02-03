@@ -11,7 +11,7 @@ public class GraphQLMediatorTest extends BaseBeanTest {
     private String schemaJson;
 
     public GraphQLMediatorTest() {
-        schemaJson = loadFromFile("schema.json");
+        schemaJson = loadFromFile("schema_example.json");
     }
 
     public void imageConfirm() {
