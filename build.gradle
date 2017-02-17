@@ -43,7 +43,7 @@ test {
 
 publishing {
     publications {
-        projectPublish(MavenPublication) {
+        mediator(MavenPublication) {
             from components.java
             groupId project.group
             artifactId project.name
@@ -92,11 +92,11 @@ bintray {
     user = System.getenv('BINTRAY_USER') ?: project.findProperty('bintray.user')
     key = System.getenv('BINTRAY_KEY') ?: project.findProperty('bintray.key')
 
-    publications = ['graphql-mediator']
+    publications = ['mediator']
     publish = true
     pkg {
         repo = 'maven'
-        name = 'graphql-mediator'
+        name = 'mediator'
         userOrg = 'nfl'
         licenses = ['MIT']
         vcsUrl = 'https://github.com/nfl/graphql-mediator'
