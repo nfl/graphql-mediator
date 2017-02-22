@@ -136,7 +136,7 @@ jar {
     from "LICENSE"
     manifest {
         attributes(
-                "Specification-Title": 'grahpql-mediator',
+                "Specification-Title": 'mediator',
                 "Specification-Version": PROJECT_VERSION,
                 "Implementation-Version": PROJECT_VERSION,
         )
