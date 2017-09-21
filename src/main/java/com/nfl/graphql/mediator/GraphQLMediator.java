@@ -72,10 +72,10 @@ public class GraphQLMediator {
         switch (typeNode.get("kind").asText()) {
             case OBJECT_KIND:
                 List<GraphQLFieldDefinition> fields = buildFields((ArrayNode) typeNode.get("fields"), undefinedTypes);
-                return new GraphQLObjectType(typeNode.get(NAME).asText(), typeNode.get("description").asText(), fields, emptyList());
+                return new GraphQLObjectType(typeName, typeNode.get("description").asText(), fields, emptyList());
 
             case ENUM_KIND:
-                GraphQLEnumType.Builder builder = newEnum().name(NAME);
+                GraphQLEnumType.Builder builder = newEnum().name(typeName);
                 deriveEnumValues((ArrayNode) typeNode.get("enumValues"), builder);
                 return builder.build();
 
