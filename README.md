@@ -74,6 +74,9 @@ Dependency:
 
 ```
 
+### How to publish a new release of the library to JCenter
+See [deploy.md](deploy.md)
+
 ## How to use it
 
 TBD
