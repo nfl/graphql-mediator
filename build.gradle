@@ -48,6 +48,10 @@ test {
     include "**/*Test.class"
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.2'
+}
+
 publishing {
     publications {
         mediator(MavenPublication) {
