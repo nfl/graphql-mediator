@@ -1,3 +1,9 @@
+import java.text.SimpleDateFormat
+
+group = 'com.nfl.graphql'
+version = System.getenv('TRAVIS_TAG') ? PROJECT_VERSION : PROJECT_VERSION + '-' + new SimpleDateFormat('yyyy-MM-dd\'T\'HH-mm-ss').format(new Date())
+description = 'A library that lets co-opt objects from other GraphQL services.'
+
 buildscript {
     repositories {
         jcenter()
@@ -17,9 +23,10 @@ apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'idea'
 
-project.group = 'com.nfl.graphql'
-
-version = '1.0.1'
+//noinspection GroovyUnusedAssignment
+sourceCompatibility = 1.8
+//noinspection GroovyUnusedAssignment
+targetCompatibility = 1.8
 
 repositories {
     mavenLocal()
@@ -70,7 +77,7 @@ publishing {
                     licenses {
                         license {
                             name 'MIT'
-                            url 'https://github.com/nfl/graphql-mediator/blob/master/LICENSE'
+                            url PROJECT_LICENSE_URL
                             distribution 'repo'
                         }
                     }
@@ -91,15 +98,14 @@ publishing {
 bintray {
     user = System.getenv('BINTRAY_USER') ?: project.findProperty('bintray.user')
     key = System.getenv('BINTRAY_KEY') ?: project.findProperty('bintray.key')
-
     publications = ['mediator']
     publish = true
     pkg {
         repo = 'maven'
-        name = 'mediator'
+        name = project.name
         userOrg = 'nfl'
         licenses = ['MIT']
-        vcsUrl = 'https://github.com/nfl/graphql-mediator'
+        vcsUrl = PROJECT_GITHUB_REPO_URL
         version {
             name = project.version
             desc = project.description
@@ -109,6 +115,7 @@ bintray {
                 sign = true
             }
             mavenCentralSync {
+                sync = project.property('maven.central.sync')
                 user = System.getenv('SONATYPE_USERNAME') ?: project.findProperty('sonatype.username')
                 password = System.getenv('SONATYPE_PASSWORD') ?: project.findProperty('sonatype.password')
             }
@@ -136,9 +143,9 @@ jar {
     from "LICENSE"
     manifest {
         attributes(
-                "Specification-Title": 'mediator',
-                "Specification-Version": PROJECT_VERSION,
-                "Implementation-Version": PROJECT_VERSION,
+                "Specification-Title": project.name,
+                "Specification-Version": project.version,
+                "Implementation-Version": project.version,
         )
     }
 }
