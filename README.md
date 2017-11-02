@@ -17,14 +17,14 @@ Example for Maven:
 <dependency>
     <groupId>com.nfl.graphql</groupId>
     <artifactId>mediator</artifactId>
-    <version>1.0.2</version>
+    <version>x.y.z</version>
 </dependency>
 ```
 
 Example for gradle:
 
 ```
-gradle compile("com.nfl.graphql:mediator:1.0.2")
+gradle compile("com.nfl.graphql:mediator:x.y.z")
 ```
 
 Change history can be found here: [CHANGELOG.md](https://github.com/nfl/graphql-mediator/blob/master/CHANGELOG.md)

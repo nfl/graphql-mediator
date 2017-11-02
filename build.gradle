@@ -86,7 +86,12 @@ publishing {
                         }
                     }
                 }
-
+                developers {
+                    developer {
+                        id 'nflearl'
+                        name 'Earl Nolan'
+                    }
+                }
                 //Bug in maven-publish plugin changes scope to runtime instead of compile
                 //https://discuss.gradle.org/t/maven-publish-plugin-generated-pom-making-dependency-scope-runtime/7494
                 asNode().dependencies.'*'.findAll() {
