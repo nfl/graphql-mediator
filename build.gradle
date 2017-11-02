@@ -85,11 +85,11 @@ publishing {
                             distribution 'repo'
                         }
                     }
-                }
-                developers {
-                    developer {
-                        id 'nflearl'
-                        name 'Earl Nolan'
+                    developers {
+                        developer {
+                            id 'nflearl'
+                            name 'Earl Nolan'
+                        }
                     }
                 }
                 //Bug in maven-publish plugin changes scope to runtime instead of compile
